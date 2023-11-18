@@ -3,24 +3,22 @@
   "version": "0.0.0.1",
   "manifest_version": 3,
   "description": "A chromium extension to support shortup input custom templates.",
-  "icons": {
-    "128": "icons/text128x128.png"
-  },
-  "action": {
-    "default_popup": "popup/popup.html"
+  "permissions": [
+    "contextMenus",
+    "activeTab"
+  ],
+  "background": {
+    "service_worker": "background.js"
   },
   "content_scripts": [
     {
       "matches": [
         "<all_urls>"
       ],
-      "js": ["lib/jquery.min.js","content-scripts/content.js"]
+      "js": ["content_scripts/content.js"]
     }
   ],
-  "web_accessible_resources": [
-    {
-        "resources": ["images/*.jpeg"],
-        "matches": ["<all_urls>"]
-    }
-  ]
+  "icons": {
+    "16": "icons/text128x128.png"
+  }
 }

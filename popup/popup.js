@@ -11,7 +11,6 @@ if (sendMessageId) {
                   tabId: tabs[0].id
                 },
                 function(response) {
-                  alert(response, chrome.runtime.getURL("images/stars.jpeg"))
                   window.close();
                 }
             );
