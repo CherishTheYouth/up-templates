@@ -3,8 +3,16 @@
 // sent by the background.js 
 chrome.runtime.onMessage.addListener(function(request, sender, sendResponse) {
   console.log('request', request, sender)
-  var template = "<p>This is a custom template.</p>";
-    // activeElement.focus();
+  var template = `
+    <p>Problem Analysis: 功能缺陷</p>
+    <p>Solved Solution: 修复功能缺陷</p>
+    <p>Impact Analysis:no impact to other components for the function is internal used</p>
+    <p>Solved Version:</p>
+    <p>Test Instruction:</p>
+    <p>redo the test</p>
+    <p>Unit Test Case No./Name:</p>
+    <p>ChangeSet:</p>
+  `;
   document.execCommand("insertHTML", false, template);
 });
 
